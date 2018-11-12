@@ -1,0 +1,6 @@
+version: '2'
+services:
+  tv-power:
+    build: ./tv-power
+    privileged: true
+    restart: unless-stopped
