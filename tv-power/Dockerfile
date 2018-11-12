@@ -21,4 +21,7 @@ RUN chmod 0644 /etc/cron.d/tv-power
 # Apply cron job
 RUN crontab /etc/cron.d/tv-power
 
-CMD cron
+# Create the log file to be able to run tail
+RUN touch /var/log/cron.log
+
+CMD cron && tail -f /var/log/cron.log
