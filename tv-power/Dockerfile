@@ -10,7 +10,7 @@ RUN mkdir build && cd build && cmake .. && make -j4 && make install
 WORKDIR /libcec
 run mkdir build && cd build && cmake cmake -DRPI_INCLUDE_DIR=/opt/vc/include -DRPI_LIB_DIR=/opt/vc/lib -DCMAKE_INSTALL_PREFIX=/opt/libcec .. && make -j4 && make install
 ENV LD_LIBRARY_PATH="/opt/libcec/lib"
-ENV PATH="/opt/libcec/bin:/opt/libcec/lib:${PATH}"
+ENV PATH="/opt/libcec/bin:${PATH}"
 
 # Add crontab file in the cron directory
 ADD crontab /etc/cron.d/tv-power
@@ -23,5 +23,7 @@ RUN crontab /etc/cron.d/tv-power
 
 # Create the log file to be able to run tail
 RUN touch /var/log/cron.log
+
+RUN ln -s /opt/libcec/lib/libcec.so.4 /usr/lib/arm-linux-gnueabihf/libcec.so.4
 
 CMD cron && tail -f /var/log/cron.log
