@@ -1,7 +1,7 @@
 # Turn TV on at 7:30 am
-30  7 * * 1-5 echo on 0 | /opt/libcec/bin/cec-client -s -d 1 >> /var/log/cron.log 2>&1
+30  7 * * 1-5 echo on 0 | /opt/libcec/bin/cec-client -s -d 1 >> /dev/null 2>&1
 31  7 * * 1-5 echo pow 0 | /opt/libcec/bin/cec-client -s -d 1 >> /var/log/cron.log 2>&1
 # Turn TV off at 6:00 pm
-0  18 * * 1-5 echo standby 0 | /opt/libcec/bin/cec-client -s -d 1 >> /var/log/cron.log 2>&1
+0  18 * * 1-5 echo standby 0 | /opt/libcec/bin/cec-client -s -d 1 >> /dev/null 2>&1
 1  18 * * 1-5 echo pow 0 | /opt/libcec/bin/cec-client -s -d 1 >> /var/log/cron.log 2>&1
 # An empty line is required at the end of this file for a valid cron file.
