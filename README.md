@@ -5,8 +5,8 @@ For use with https://balena.io
 
 clone repo
 ``` shell
-git clone https://gitea.popcornrules.com/POPCORNrules/tv-power.git
-cd tv-power
+git clone https://github.com/POPCORNrules/docker-libcec-rpi.git
+cd docker-libcec-rpi
 ```
 
 copy to your project
