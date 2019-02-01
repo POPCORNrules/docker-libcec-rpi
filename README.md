@@ -36,7 +36,7 @@ edit crontab to set on/off times
 # Turn TV off at 5:30 pm
 30  17 * * 1-5 echo standby 0 | /opt/libcec/bin/cec-client -s -d 1 >> /dev/null 2>&1
 # Check TV power every 10 Min
-*/10 * * * * echo pow 0 | /opt/libcec/bin/cec-client -s -d 1
+1/10 * * * * echo pow 0 | /opt/libcec/bin/cec-client -s -d 1
 ```
 
 push to balena
